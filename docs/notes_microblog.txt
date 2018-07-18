@@ -44,7 +44,6 @@ MS
 $ venv\Scripts\activate
 (venv) $ _
 
-
 ===================================================
 
 (venv) $ pip install flask
