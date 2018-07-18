@@ -5,8 +5,8 @@ TO DO: app sources download
 $ git config --global http.proxy http://proxy.mycompany:80
 $ git clone https://github.com/daniel-julio-iglesias/microblog
 
-PyCharm action: Git --> Commit File ... --> Commit
-PyCharm action: commit
+PyCharm action: [right click] Git --> Commit File ... --> Commit
+PyCharm action: [right click] Git --> Repository --> Push ... --> Push
 
 
 ===================================================
