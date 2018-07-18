@@ -1,4 +1,6 @@
 ===================================================
+A kind of REAME.first file
+===================================================
 TO DO: app sources download
 $ git config --global http.proxy http://proxy.mycompany:80
 $ git clone https://github.com/daniel-julio-iglesias/microblog
