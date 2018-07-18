@@ -1,4 +1,10 @@
 ===================================================
+(venv) $ pip install flask
+(venv) $ pip install flask-wtf
+(venv) $ pip install flask-sqlalchemy
+(venv) $ pip install flask-migrate
+(venv) $ pip install flask-login
+===================================================
 
 $ mkdir microblog
 $ cd microblog
@@ -17,6 +23,10 @@ $ venv\Scripts\activate
 
 
 ===================================================
+
+(venv) $ pip install flask
+
+
 Linux
 (venv) $ export FLASK_APP=microblog.py
 MS
@@ -25,7 +35,17 @@ MS
 (venv) $ flask run
 
 
+URL: http://localhost:5000/
+URL: http://localhost:5000/index
+
 ===================================================
+
+(venv) $ pip install flask-wtf
+(venv) $ pip install flask-sqlalchemy
+(venv) $ pip install flask-migrate
+
+
+
 
 >>> from app.models import User
 >>> u = User(username='susan', email='susan@example.com')
@@ -33,6 +53,11 @@ MS
 
 
 ===================================================
+Linux
+(venv) $ export FLASK_APP=microblog.py
+MS
+(venv) $ set FLASK_APP=microblog.py
+
 
 (venv) $ flask db init
 (venv) $ flask db migrate -m "users table"
