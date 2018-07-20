@@ -1,6 +1,17 @@
+# microblog
+
+
+See the blog "The Flask Mega-Tutorial  [December 5 2017]" at
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+
 ===================================================
+
+
 A kind of REAME.first file
+... but in reality the content are my notes
+
 ===================================================
+
 TO DO: app sources download
 $ git config --global http.proxy http://proxy.mycompany:80
 $ git clone https://github.com/daniel-julio-iglesias/microblog
@@ -10,6 +21,7 @@ PyCharm action: [right click] Git --> Repository --> Push ... --> Push
 
 
 ===================================================
+
 TO DO: install these packages after app sources download
 
 
@@ -20,6 +32,7 @@ TO DO: install these packages after app sources download
 (venv) $ pip install flask-sqlalchemy
 (venv) $ pip install flask-migrate
 (venv) $ pip install flask-login
+
 ===================================================
 
 TO DO: apply the next db steps after downloading your app sources
@@ -94,6 +107,7 @@ MS
 (venv) $ flask db upgrade
 (venv) $ flask db migrate -m "posts table"
 (venv) $ flask db upgrade
+
 ===================================================
 ===================================================
 
@@ -218,6 +232,7 @@ True
 (venv) $ pip install flask-login
 
 ===================================================
+
 Linux
 (venv) $ export FLASK_APP=microblog.py
 MS
@@ -238,6 +253,7 @@ MS
 (venv) $ flask run
 
 (venv) $ flask run -h 0.0.0.0
+
 ===================================================
 ===================================================
 
