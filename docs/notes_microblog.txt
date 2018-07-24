@@ -258,3 +258,35 @@ The Flask Mega-Tutorial Part VI: Profile Page and Avatars
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vi-profile-page-and-avatars
 
 ===================================================
+===================================================
+
+Linux
+(venv) $ export FLASK_APP=microblog.py
+MS
+(venv) $ set FLASK_APP=microblog.py
+
+(venv) $ flask shell
+
+
+
+===================================================
+
+
+
+
+
+===================================================
+
+
+
+
+===================================================
+
+
+
+
+
+
+===================================================
+
+
