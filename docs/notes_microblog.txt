@@ -267,18 +267,52 @@ MS
 
 (venv) $ flask shell
 
+>>> User.query.all()
+>>> u = User(username='john', email='john@example.com')
+>>> u.set_password('bug')
+>>> db.session.add(u)
+>>> db.session.commit()
+
+(venv) $ flask run
+
+http://localhost:5000/user/john
 
 
 ===================================================
 
 
+The Gravatar service is very simple to use. To request an image for a given user,
+a URL with the format https://www.gravatar.com/avatar/<hash>, where <hash> is the MD5 hash
+of the user's email address.
+Below you can see how to obtain the Gravatar URL for a user with email john@example.com:
+
+>>> from hashlib import md5
+>>> 'https://www.gravatar.com/avatar/' + md5(b'john@example.com').hexdigest()
+'https://www.gravatar.com/avatar/d4c74594d841139328695756648b6bd6'
+'https://www.gravatar.com/avatar/d4c74594d841139328695756648b6bd6'
 
 
+>>> 'https://www.gravatar.com/avatar/' + md5(b'myemail@example.com').hexdigest()
+'https://www.gravatar.com/avatar/f69e4c7018d22371bb6dac594d928992'
+https://www.gravatar.com/avatar/f69e4c7018d22371bb6dac594d928992?s=128
 
 ===================================================
 
+Linux
+(venv) $ export FLASK_APP=microblog.py
+MS
+(venv) $ set FLASK_APP=microblog.py
 
+(venv) $ flask shell
 
+>>> me = User.query.filter_by(username='daniel').first()
+>>> db.session.delete(me)
+>>> db.session.commit()
+>>> me = User(username='daniel', email='myemail@example.com')
+>>> me.set_password('dog')
+>>> db.session.add(me)
+>>> db.session.commit()
+>>> User.query.all()
 
 ===================================================
 
