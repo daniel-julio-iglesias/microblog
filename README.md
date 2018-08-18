@@ -59,10 +59,6 @@ MS
 ===================================================
 
 
-Continue with reading notes_microblog.txt file inside docs directory.
-
-===================================================
-
 Finished at The Flask Mega-Tutorial Part V: User Logins  [January 2 2018]
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins
 
@@ -71,5 +67,9 @@ https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins
 To continue with
 The Flask Mega-Tutorial Part VI: Profile Page and Avatars
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vi-profile-page-and-avatars
+
+===================================================
+
+Continue with reading notes_microblog.txt file inside docs directory.
 
 ===================================================

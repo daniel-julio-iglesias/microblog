@@ -315,8 +315,25 @@ MS
 >>> User.query.all()
 
 ===================================================
+===================================================
+
+To continue with
+The Flask Mega-Tutorial Part VI: Profile Page and Avatars
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vi-profile-page-and-avatars
 
 
+Using Jinja2 Sub-Templates
+
+===================================================
+
+(venv) $ flask db migrate -m "new fields in user model"
+(venv) $ flask db upgrade
+
+===================================================
+
+
+
+===================================================
 
 
 
@@ -324,3 +341,6 @@ MS
 ===================================================
 
 
+
+
+===================================================
