@@ -331,7 +331,25 @@ Using Jinja2 Sub-Templates
 
 ===================================================
 
+Linux
+(venv) $ export FLASK_APP=microblog.py
+MS
+(venv) $ set FLASK_APP=microblog.py
 
+(venv) $ flask shell
+(venv) $ flask run
+
+===================================================
+
+Finished with
+The Flask Mega-Tutorial Part VI: Profile Page and Avatars
+
+===================================================
+===================================================
+
+To continue with
+The Flask Mega-Tutorial Part VII: Error Handling
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling
 
 ===================================================
 
@@ -340,6 +358,14 @@ Using Jinja2 Sub-Templates
 
 ===================================================
 
+
+
+
+===================================================
+
+
+
+===================================================
 
 
 
