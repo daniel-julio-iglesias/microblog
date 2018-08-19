@@ -353,6 +353,179 @@ https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-hand
 
 ===================================================
 
+Linux
+(venv) $ export FLASK_APP=microblog.py
+MS
+(venv) $ set FLASK_APP=microblog.py
+
+(venv) $ flask shell
+(venv) $ flask run
+
+===================================================
+>>> u = User(username='susan', email='susan@example.com')
+>>> u.set_password('cat')
+
+>>> u = User(username='daniel', email='daniel@example.com')
+>>> u.set_password('dog')
+
+===================================================
+Linux
+(venv) $ export FLASK_DEBUG=1
+MS
+(venv) $ set FLASK_DEBUG=1
+
+===================================================
+
+The debugger caught an exception in your WSGI application. You can now look at the
+traceback which led to the error.
+
+To switch between the interactive traceback and the plaintext one, you can click on
+the "Traceback" headline.
+From the text traceback you can also create a paste of it. For code execution
+mouse-over the frame you want to debug
+and click on the console icon on the right side.
+
+You can execute arbitrary Python code in the stack frames and there are some
+extra helpers available for introspection:
+
+    dump() shows all variables in the frame
+    dump(obj) dumps all that's known about the object
+
+===================================================
+
+Linux
+(venv) $ export FLASK_DEBUG=0
+MS
+(venv) $ set FLASK_DEBUG=0
+
+===================================================
+
+The easiest one is to use the SMTP debugging server from Python.
+This is a fake email server that accepts emails, but instead of sending them,
+it prints them to the console. To run this server, open a second terminal
+session and run the following command on it:
+
+
+(venv) $ python -m smtpd -n -c DebuggingServer localhost:8025
+
+-------------
+
+Leave the debugging SMTP server running and go back to your first terminal and set
+
+Linux
+(venv) $ export FLASK_DEBUG=0
+MS
+(venv) $ set FLASK_DEBUG=0
+
+
+Linux
+(venv) $ export MAIL_SERVER=localhost
+MS
+(venv) $ set MAIL_SERVER=localhost
+
+
+Linux
+(venv) $ export MAIL_PORT=8025
+MS
+(venv) $ set MAIL_PORT=8025
+
+
+-------------
+
+---------- MESSAGE FOLLOWS ----------
+b'From: no-reply@localhost'
+b'To: my-email@example.com'
+b'Subject: Microblog Failure'
+b'Date: Sun, 19 Aug 2018 18:39:19 +0300'
+b'Content-Type: text/plain; charset="utf-8"'
+b'Content-Transfer-Encoding: 7bit'
+b'MIME-Version: 1.0'
+b'X-Peer: ::1'
+b''
+b'Exception on /edit_profile [POST]'
+b'Traceback (most recent call last):'
+(...)
+b'sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username [SQL: \'UPDATE user SET username=?, about_me=? WHERE user.id = ?\']
+ [parameters: (\'susan\', "This is Susan\'s profile", 4)] (Background on this error at: http://sqlalche.me/e/gkpj)'
+===================================================
+
+A second testing approach for this feature is to configure
+a real email server. Below is the configuration to use your Gmail account's email server:
+
+export MAIL_SERVER=smtp.googlemail.com
+export MAIL_PORT=587
+export MAIL_USE_TLS=1
+export MAIL_USERNAME=<your-gmail-username>
+export MAIL_PASSWORD=<your-gmail-password>
+
+If you are using Microsoft Windows, remember to use
+set instead of export in each of the statements above.
+
+===================================================
+The security features in your Gmail account may prevent
+the application from sending emails through it unless
+you explicitly allow "less secure apps" access to your
+Gmail account. You can read about this here, and
+if you are concerned about the security of your account,
+you can create a secondary account that you configure
+just for testing emails, or you can enable less secure
+apps only temporarily to run this test and then revert
+back to the default.
+
+https://support.google.com/accounts/answer/6010255?hl=en
+
+
+Let less secure apps access your account
+
+If an app or device doesn’t meet our security standards,
+Google will block anyone who tries to sign in from that app or device.
+Because these apps and devices are easier to break into, blocking
+them helps keep your account safe.
+
+Some examples of apps that do not support the latest security standards include:
+
+The Mail app on your iPhone or iPad with version 6 or below
+The Mail app on your Windows phone preceding the 8.1 release
+Some Desktop mail clients like Microsoft Outlook and Mozilla Thunderbird
+Change account access for less secure apps
+To help keep Google Accounts through work, school, or other groups more secure,
+we block some less secure apps from using them. If you have this kind of account,
+you’ll see a "Password incorrect" error when trying to sign in. If so,
+you have two options:
+
+Option 1: Install a more secure app that uses stronger security measures.
+All Google products, like Gmail, use the latest security measures.
+Option 2: Change your settings to allow less secure apps into your account.
+We don't recommend this option because it can make it easier for someone
+to break into your account. If you want to allow access anyway, follow these steps:
+Go to the Less secure apps section of your Google Account.
+Turn on Allow less secure apps. If you don't see this setting,
+your administrator might have turned off less secure app account access.
+If you still can't sign in to your account, learn more about the
+"password incorrect" error.
+
+
+===================================================
+
+Finished
+The Flask Mega-Tutorial Part VII: Error Handling
+
+===================================================
+===================================================
+
+Continue with
+The Flask Mega-Tutorial Part VIII: Followers
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers
+
+
+===================================================
+
+
+
+===================================================
+
+
+
 
 
 
@@ -363,9 +536,6 @@ https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-hand
 
 ===================================================
 
-
-
-===================================================
 
 
 
