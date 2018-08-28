@@ -520,6 +520,12 @@ https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers
 
 ===================================================
 
+Add into main project / application py file
+for PyCharm CE debug
+
+
+if __name__ == '__main__':
+    app.run(debug=True, use_debugger=False, use_reloader=False, passthrough_errors=True, threaded=False)
 
 
 ===================================================
