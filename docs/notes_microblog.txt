@@ -529,6 +529,42 @@ if __name__ == '__main__':
 
 
 ===================================================
+The changes to the database need to be recorded in a new database migration:
+
+(venv) $ flask db migrate -m "followers"
+(venv) $ flask db upgrade
+
+
+
+Adding and Removing "follows"
+Thanks to the SQLAlchemy ORM, a user following another user can be recorded in the database working with the followed relationship as if it was a list. For example, if I had two users stored in user1 and user2 variables, I can make the first follow the second with this simple statement:
+user1.followed.append(user2)
+
+To stop following the user, then I could do:
+user1.followed.remove(user2)
+
+===================================================
+
+You can run the entire test suite with the following command:
+
+(venv) $ python tests.py
+
+===================================================
+===================================================
+
+Finished
+The Flask Mega-Tutorial Part VIII: Followers
+
+===================================================
+===================================================
+
+Continue with
+The Flask Mega-Tutorial Part IX: Pagination
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination
+
+
+===================================================
+
 
 
 
@@ -542,6 +578,9 @@ if __name__ == '__main__':
 
 ===================================================
 
+
+
+===================================================
 
 
 
