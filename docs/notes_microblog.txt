@@ -562,6 +562,40 @@ Continue with
 The Flask Mega-Tutorial Part IX: Pagination
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination
 
+===================================================
+===================================================
+
+
+Linux
+(venv) $ export FLASK_APP=microblog.py
+MS
+(venv) $ set FLASK_APP=microblog.py
+
+(venv) $ flask run
+
+
+
+===================================================
+===================================================
+Finished
+The Flask Mega-Tutorial Part IX: Pagination
+
+Continue with
+The Flask Mega-Tutorial Part X: Email Support
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support
+===================================================
+===================================================
+
+
+
+===================================================
+
+
+
+===================================================
+
+
+
 
 ===================================================
 
@@ -575,13 +609,3 @@ https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination
 
 
 
-
-===================================================
-
-
-
-===================================================
-
-
-
-===================================================
