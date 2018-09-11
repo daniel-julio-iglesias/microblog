@@ -252,6 +252,26 @@ Finished at The Flask Mega-Tutorial Part V: User Logins  [January 2 2018]
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins
 
 ===================================================
+===================================================
+Before I end this chapter, I want to mention one more thing.
+Since environment variables aren't remembered across terminal sessions,
+you may find tedious to always have to set the FLASK_APP environment variable
+when you open a new terminal window. Starting with version 1.0,
+Flask allows you to register environment variables that you want to be
+automatically imported when you run the flask command. To use this option you have
+to install the python-dotenv package:
+
+(venv) $ pip install python-dotenv
+Then you can just write the environment variable name and value in a .flaskenv file
+in the top-level directory of the project:
+
+.flaskenv: Environment variables for flask command
+
+FLASK_APP=microblog.py
+Doing this is optional. If you prefer to set the environment variable manually,
+that is perfectly fine, as long as you always remember to do it.
+===================================================
+===================================================
 
 To continue with
 The Flask Mega-Tutorial Part VI: Profile Page and Avatars
@@ -573,8 +593,6 @@ MS
 
 (venv) $ flask run
 
-
-
 ===================================================
 ===================================================
 Finished
@@ -585,10 +603,67 @@ The Flask Mega-Tutorial Part X: Email Support
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support
 ===================================================
 ===================================================
+-----------------------------------
+
+Linux
+$ source venv/bin/activate
 
 
+Windows
+
+cd C:\Users\di\PycharmProjects\microblog
+
+$ venv\Scripts\activate
+
+
+-----------------------------------
+
+
+If you are planning to test sending of emails you have the same two options
+ I mentioned in Chapter 7. If you want to use an emulated email server,
+  Python provides one that is very handy that you can start in a second terminal
+  with the following command:
+
+(venv) $ python -m smtpd -n -c DebuggingServer localhost:8025
+To configure for this server you will need to set two environment variables:
+
+Linux
+(venv) $ export MAIL_SERVER=localhost
+(venv) $ export MAIL_PORT=8025
+
+Windows
+(venv) $ set MAIL_SERVER=localhost
+(venv) $ set MAIL_PORT=8025
+
+------------------------------------
+If you prefer to have emails sent for real, you need to use a real email server.
+ If you have one, then you just need to set the MAIL_SERVER, MAIL_PORT, MAIL_USE_TLS,
+ MAIL_USERNAME and MAIL_PASSWORD environment variables for it. If you want a quick solution,
+ you can use a Gmail account to send email, with the following settings:
+
+(venv) $ export MAIL_SERVER=smtp.googlemail.com
+(venv) $ export MAIL_PORT=587
+(venv) $ export MAIL_USE_TLS=1
+(venv) $ export MAIL_USERNAME=<your-gmail-username>
+(venv) $ export MAIL_PASSWORD=<your-gmail-password>
+
+------------------------------------
+
+If you are using Microsoft Windows,
+you need to replace export with set in each of the export statements above.
+
+-----------------------------------
 
 ===================================================
+
+(venv) $ flask shell
+
+>>> from flask_mail import Message
+>>> from app import mail
+>>> msg = Message('test subject', sender=app.config['ADMINS'][0], recipients=['your-email@example.com'])
+>>> msg.body = 'text body'
+>>> msg.html = '<h1>HTML body</h1>'
+>>> mail.send(msg)
 
 
 
