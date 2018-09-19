@@ -1,6 +1,8 @@
 #!/usr/bin/env python
-# -*- coding: ascii -*-
+# -*- coding: utf-8 -*-
 
+#!/usr/bin/env python
+# -*- coding: ascii -*-
 
 #/usr/bin/env python3
 # coding: cp1252

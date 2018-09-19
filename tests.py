@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from datetime import datetime, timedelta
 import unittest
 from app import app, db
