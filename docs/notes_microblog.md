@@ -1,13 +1,16 @@
-===================================================
+# microblog
 
+## microblog notes
+
+```
 
 See the blog "The Flask Mega-Tutorial  [December 5 2017]" at
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+```
 
-===================================================
+# A kind of README.first file
+```
 
-A kind of REAME.first file
-===================================================
 TO DO: app sources download
 $ git config --global http.proxy http://proxy.mycompany:80
 $ git clone https://github.com/daniel-julio-iglesias/microblog
@@ -15,10 +18,9 @@ $ git clone https://github.com/daniel-julio-iglesias/microblog
 PyCharm action: [right click] Git --> Commit File ... --> Commit
 PyCharm action: [right click] Git --> Repository --> Push ... --> Push
 
-
-===================================================
+```
 TO DO: install these packages after app sources download
-
+```
 
 (venv) $ pip install flask
 (venv) $ pip install --proxy http://user:pass@proxyAddress:proxyPort flask
@@ -27,10 +29,10 @@ TO DO: install these packages after app sources download
 (venv) $ pip install flask-sqlalchemy
 (venv) $ pip install flask-migrate
 (venv) $ pip install flask-login
-===================================================
+```
 
 TO DO: apply the next db steps after downloading your app sources
-
+```
 Linux
 (venv) $ export FLASK_APP=microblog.py
 MS
@@ -38,10 +40,10 @@ MS
 
 (venv) $ flask db upgrade
 
-===================================================
-===================================================
-===================================================
+```
 
+
+```
 $ mkdir microblog
 $ cd microblog
 
@@ -57,8 +59,8 @@ MS
 $ venv\Scripts\activate
 (venv) $ _
 
-===================================================
-
+```
+```
 (venv) $ pip install flask
 
 
@@ -72,8 +74,9 @@ MS
 
 URL: http://localhost:5000/
 URL: http://localhost:5000/index
+```
 
-===================================================
+```
 
 (venv) $ pip install flask-wtf
 (venv) $ pip install flask-sqlalchemy
@@ -87,9 +90,9 @@ URL: http://localhost:5000/index
 >>> u
 
 
-===================================================
-===================================================
+```
 
+```
 Linux
 (venv) $ export FLASK_APP=microblog.py
 MS
@@ -101,9 +104,9 @@ MS
 (venv) $ flask db upgrade
 (venv) $ flask db migrate -m "posts table"
 (venv) $ flask db upgrade
-===================================================
-===================================================
+```
 
+```
 >>> from app import db
 >>> from app.models import User, Post
 
@@ -136,10 +139,9 @@ db.session.rollback()
 >>> db.session.add(p)
 >>> db.session.commit()
 
+```
 
-
-===================================================
-
+```
 >>> # get all posts written by a user
 >>> u = User.query.get(1)
 >>> u
@@ -166,8 +168,9 @@ db.session.rollback()
 >>> User.query.order_by(User.username.desc()).all()
 [<User susan>, <User john>]
 
-===================================================
+```
 
+```
 >>> users = User.query.all()
 >>> for u in users:
 ...     db.session.delete(u)
@@ -178,9 +181,9 @@ db.session.rollback()
 ...
 >>> db.session.commit()
 
-===================================================
+```
 
-
+```
 (venv) $ python
 >>> app
 Traceback (most recent call last):
@@ -192,8 +195,9 @@ NameError: name 'app' is not defined
 >>> app
 <Flask 'app'>
 
-===================================================
+```
 
+```
 Linux
 (venv) $ export FLASK_APP=microblog.py
 MS
@@ -209,8 +213,6 @@ MS
 <class 'app.models.Post'>
 
 
-
-
 >>> u = User(username='susan', email='susan@example.com')
 >>> u.set_password('mypassword')
 >>> u.check_password('anotherpassword')
@@ -219,12 +221,14 @@ False
 True
 
 
-===================================================
-
+```
+```
 
 (venv) $ pip install flask-login
 
-===================================================
+```
+
+```
 Linux
 (venv) $ export FLASK_APP=microblog.py
 MS
@@ -245,14 +249,14 @@ MS
 (venv) $ flask run
 
 (venv) $ flask run -h 0.0.0.0
-===================================================
-===================================================
 
-Finished at The Flask Mega-Tutorial Part V: User Logins  [January 2 2018]
+```
+
+# Finished at The Flask Mega-Tutorial Part V: User Logins  [January 2 2018]
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins
 
-===================================================
-===================================================
+
+
 Before I end this chapter, I want to mention one more thing.
 Since environment variables aren't remembered across terminal sessions,
 you may find tedious to always have to set the FLASK_APP environment variable
@@ -261,7 +265,10 @@ Flask allows you to register environment variables that you want to be
 automatically imported when you run the flask command. To use this option you have
 to install the python-dotenv package:
 
+```
 (venv) $ pip install python-dotenv
+```
+
 Then you can just write the environment variable name and value in a .flaskenv file
 in the top-level directory of the project:
 
@@ -270,16 +277,15 @@ in the top-level directory of the project:
 FLASK_APP=microblog.py
 Doing this is optional. If you prefer to set the environment variable manually,
 that is perfectly fine, as long as you always remember to do it.
-===================================================
-===================================================
+
+```
 
 To continue with
 The Flask Mega-Tutorial Part VI: Profile Page and Avatars
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vi-profile-page-and-avatars
 
-===================================================
-===================================================
-
+```
+```
 Linux
 (venv) $ export FLASK_APP=microblog.py
 MS
@@ -297,15 +303,14 @@ MS
 
 http://localhost:5000/user/john
 
-
-===================================================
-
+```
 
 The Gravatar service is very simple to use. To request an image for a given user,
 a URL with the format https://www.gravatar.com/avatar/<hash>, where <hash> is the MD5 hash
 of the user's email address.
 Below you can see how to obtain the Gravatar URL for a user with email john@example.com:
 
+```
 >>> from hashlib import md5
 >>> 'https://www.gravatar.com/avatar/' + md5(b'john@example.com').hexdigest()
 'https://www.gravatar.com/avatar/d4c74594d841139328695756648b6bd6'
@@ -316,8 +321,8 @@ Below you can see how to obtain the Gravatar URL for a user with email john@exam
 'https://www.gravatar.com/avatar/f69e4c7018d22371bb6dac594d928992'
 https://www.gravatar.com/avatar/f69e4c7018d22371bb6dac594d928992?s=128
 
-===================================================
-
+```
+```
 Linux
 (venv) $ export FLASK_APP=microblog.py
 MS
@@ -334,23 +339,23 @@ MS
 >>> db.session.commit()
 >>> User.query.all()
 
-===================================================
-===================================================
+```
 
-To continue with
+## To continue with
 The Flask Mega-Tutorial Part VI: Profile Page and Avatars
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vi-profile-page-and-avatars
 
 
 Using Jinja2 Sub-Templates
 
-===================================================
+```
 
 (venv) $ flask db migrate -m "new fields in user model"
 (venv) $ flask db upgrade
 
-===================================================
+```
 
+```
 Linux
 (venv) $ export FLASK_APP=microblog.py
 MS
@@ -359,19 +364,17 @@ MS
 (venv) $ flask shell
 (venv) $ flask run
 
-===================================================
+```
 
 Finished with
 The Flask Mega-Tutorial Part VI: Profile Page and Avatars
 
-===================================================
-===================================================
 
-To continue with
+## To continue with
 The Flask Mega-Tutorial Part VII: Error Handling
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling
 
-===================================================
+```
 
 Linux
 (venv) $ export FLASK_APP=microblog.py
@@ -381,20 +384,24 @@ MS
 (venv) $ flask shell
 (venv) $ flask run
 
-===================================================
+```
+
+```
 >>> u = User(username='susan', email='susan@example.com')
 >>> u.set_password('cat')
 
 >>> u = User(username='daniel', email='daniel@example.com')
 >>> u.set_password('dog')
 
-===================================================
+```
+
+```
 Linux
 (venv) $ export FLASK_DEBUG=1
 MS
 (venv) $ set FLASK_DEBUG=1
 
-===================================================
+```
 
 The debugger caught an exception in your WSGI application. You can now look at the
 traceback which led to the error.
@@ -407,31 +414,32 @@ and click on the console icon on the right side.
 
 You can execute arbitrary Python code in the stack frames and there are some
 extra helpers available for introspection:
-
+```
     dump() shows all variables in the frame
     dump(obj) dumps all that's known about the object
 
-===================================================
-
+```
+```
 Linux
 (venv) $ export FLASK_DEBUG=0
 MS
 (venv) $ set FLASK_DEBUG=0
 
-===================================================
+```
 
 The easiest one is to use the SMTP debugging server from Python.
 This is a fake email server that accepts emails, but instead of sending them,
 it prints them to the console. To run this server, open a second terminal
 session and run the following command on it:
 
-
+```
 (venv) $ python -m smtpd -n -c DebuggingServer localhost:8025
 
--------------
+```
 
 Leave the debugging SMTP server running and go back to your first terminal and set
 
+```
 Linux
 (venv) $ export FLASK_DEBUG=0
 MS
@@ -450,8 +458,9 @@ MS
 (venv) $ set MAIL_PORT=8025
 
 
--------------
+```
 
+```
 ---------- MESSAGE FOLLOWS ----------
 b'From: no-reply@localhost'
 b'To: my-email@example.com'
@@ -467,21 +476,22 @@ b'Traceback (most recent call last):'
 (...)
 b'sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username [SQL: \'UPDATE user SET username=?, about_me=? WHERE user.id = ?\']
  [parameters: (\'susan\', "This is Susan\'s profile", 4)] (Background on this error at: http://sqlalche.me/e/gkpj)'
-===================================================
+
+```
 
 A second testing approach for this feature is to configure
 a real email server. Below is the configuration to use your Gmail account's email server:
 
+```
 export MAIL_SERVER=smtp.googlemail.com
 export MAIL_PORT=587
 export MAIL_USE_TLS=1
 export MAIL_USERNAME=<your-gmail-username>
 export MAIL_PASSWORD=<your-gmail-password>
-
+```
 If you are using Microsoft Windows, remember to use
 set instead of export in each of the statements above.
 
-===================================================
 The security features in your Gmail account may prevent
 the application from sending emails through it unless
 you explicitly allow "less secure apps" access to your
@@ -525,65 +535,63 @@ If you still can't sign in to your account, learn more about the
 "password incorrect" error.
 
 
-===================================================
+```
 
 Finished
 The Flask Mega-Tutorial Part VII: Error Handling
 
-===================================================
-===================================================
+```
 
-Continue with
+## Continue with
 The Flask Mega-Tutorial Part VIII: Followers
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-viii-followers
 
 
-===================================================
-
 Add into main project / application py file
 for PyCharm CE debug
 
-
+```
 if __name__ == '__main__':
     app.run(debug=True, use_debugger=False, use_reloader=False, passthrough_errors=True, threaded=False)
 
 
-===================================================
+```
+
 The changes to the database need to be recorded in a new database migration:
 
+```
 (venv) $ flask db migrate -m "followers"
 (venv) $ flask db upgrade
 
-
+```
 
 Adding and Removing "follows"
 Thanks to the SQLAlchemy ORM, a user following another user can be recorded in the database working with the followed relationship as if it was a list. For example, if I had two users stored in user1 and user2 variables, I can make the first follow the second with this simple statement:
 user1.followed.append(user2)
 
 To stop following the user, then I could do:
+
+```
 user1.followed.remove(user2)
 
-===================================================
+```
 
 You can run the entire test suite with the following command:
 
+```
 (venv) $ python tests.py
 
-===================================================
-===================================================
+```
+
 
 Finished
 The Flask Mega-Tutorial Part VIII: Followers
 
-===================================================
-===================================================
-
-Continue with
+## Continue with
 The Flask Mega-Tutorial Part IX: Pagination
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ix-pagination
 
-===================================================
-===================================================
+```
 
 
 Linux
@@ -593,17 +601,16 @@ MS
 
 (venv) $ flask run
 
-===================================================
-===================================================
+```
+
 Finished
 The Flask Mega-Tutorial Part IX: Pagination
 
-Continue with
+## Continue with
 The Flask Mega-Tutorial Part X: Email Support
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-x-email-support
-===================================================
-===================================================
------------------------------------
+
+```
 
 Linux
 $ source venv/bin/activate
@@ -616,7 +623,7 @@ cd C:\Users\di\PycharmProjects\microblog
 $ venv\Scripts\activate
 
 
------------------------------------
+```
 
 
 If you are planning to test sending of emails you have the same two options
@@ -624,9 +631,13 @@ If you are planning to test sending of emails you have the same two options
   Python provides one that is very handy that you can start in a second terminal
   with the following command:
 
+```
 (venv) $ python -m smtpd -n -c DebuggingServer localhost:8025
+```
+
 To configure for this server you will need to set two environment variables:
 
+```
 Linux
 (venv) $ export MAIL_SERVER=localhost
 (venv) $ export MAIL_PORT=8025
@@ -635,26 +646,26 @@ Windows
 (venv) $ set MAIL_SERVER=localhost
 (venv) $ set MAIL_PORT=8025
 
-------------------------------------
+```
+
 If you prefer to have emails sent for real, you need to use a real email server.
  If you have one, then you just need to set the MAIL_SERVER, MAIL_PORT, MAIL_USE_TLS,
  MAIL_USERNAME and MAIL_PASSWORD environment variables for it. If you want a quick solution,
  you can use a Gmail account to send email, with the following settings:
 
+```
 (venv) $ export MAIL_SERVER=smtp.googlemail.com
 (venv) $ export MAIL_PORT=587
 (venv) $ export MAIL_USE_TLS=1
 (venv) $ export MAIL_USERNAME=<your-gmail-username>
 (venv) $ export MAIL_PASSWORD=<your-gmail-password>
 
-------------------------------------
+```
 
 If you are using Microsoft Windows,
 you need to replace export with set in each of the export statements above.
 
------------------------------------
-
-===================================================
+```
 
 (venv) $ flask shell
 
@@ -665,22 +676,4 @@ you need to replace export with set in each of the export statements above.
 >>> msg.html = '<h1>HTML body</h1>'
 >>> mail.send(msg)
 
-
-
-===================================================
-
-
-
-
-===================================================
-
-
-
-
-
-
-
-===================================================
-
-
-
+```
