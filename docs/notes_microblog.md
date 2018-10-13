@@ -535,12 +535,12 @@ If you still can't sign in to your account, learn more about the
 "password incorrect" error.
 
 
-```
 
-Finished
+
+## Finished
 The Flask Mega-Tutorial Part VII: Error Handling
 
-```
+
 
 ## Continue with
 The Flask Mega-Tutorial Part VIII: Followers
@@ -705,3 +705,11 @@ b'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhIjoiYiJ9.dvOo58OBDHiuSHD4uW88nfJikhYA
 ```
 
 Press the submit button on the password reset request form.
+
+
+## Finished
+The Flask Mega-Tutorial Part X: Email Support
+
+## Continue with
+The Flask Mega-Tutorial Part XI: Facelift
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xi-facelift
