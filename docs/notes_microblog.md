@@ -635,7 +635,8 @@ If you are planning to test sending of emails you have the same two options
 (venv) $ python -m smtpd -n -c DebuggingServer localhost:8025
 ```
 
-To configure for this server you will need to set two environment variables:
+To configure for this server you will need to set two environment variables
+in the first terminal:
 
 ```
 Linux
@@ -652,6 +653,16 @@ If you prefer to have emails sent for real, you need to use a real email server.
  If you have one, then you just need to set the MAIL_SERVER, MAIL_PORT, MAIL_USE_TLS,
  MAIL_USERNAME and MAIL_PASSWORD environment variables for it. If you want a quick solution,
  you can use a Gmail account to send email, with the following settings:
+
+From chapter 7:
+Leave the debugging SMTP server running and go back to your first terminal and 
+set export MAIL_SERVER=localhost and and MAIL_PORT=8025 in the environment 
+(use set instead of export if you are using Microsoft Windows). 
+Make sure the FLASK_DEBUG variable is set to 0 or not set at all, 
+since the application will not send emails in debug mode. Run the application 
+and trigger the SQLAlchemy error one more time to see how the terminal session 
+running the fake email server shows an email with the full stack trace of the error.
+
 
 ```
 (venv) $ export MAIL_SERVER=smtp.googlemail.com
@@ -677,3 +688,20 @@ you need to replace export with set in each of the export statements above.
 >>> mail.send(msg)
 
 ```
+
+## Password Reset Tokens
+How do JWTs work?
+Nothing better than a quick Python shell session to understand them:
+
+```
+
+>>> import jwt
+>>> token = jwt.encode({'a': 'b'}, 'my-secret', algorithm='HS256')
+>>> token
+b'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhIjoiYiJ9.dvOo58OBDHiuSHD4uW88nfJikhYAXc_sfUHq1mDi4G0'
+>>> jwt.decode(token, 'my-secret', algorithms=['HS256'])
+{'a': 'b'}
+
+```
+
+Press the submit button on the password reset request form.

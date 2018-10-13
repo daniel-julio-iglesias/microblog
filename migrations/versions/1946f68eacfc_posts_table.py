@@ -1,9 +1,7 @@
 """posts table
-
 Revision ID: 1946f68eacfc
 Revises: ca4cdf74db85
 Create Date: 2018-07-15 14:53:19.504309
-
 """
 from alembic import op
 import sqlalchemy as sa
