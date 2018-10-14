@@ -730,4 +730,34 @@ The Flask Mega-Tutorial Part XI: Facelift
 The Flask Mega-Tutorial Part XII: Dates and Times
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times
 
+How to work with dates and times in a way that works for all your users, 
+regardless of where they reside.
+
+## Finished
+The Flask Mega-Tutorial Part XII: Dates and Times
+
+## Continue with
+The Flask Mega-Tutorial Part XIII: I18n and L10n
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiii-i18n-and-l10n
+
+
+How to expand Microblog to support multiple languages.
+As part of that effort you will also learn about creating your own
+CLI extensions to the flask command.
+
+Internationalization and Localization, commonly abbreviated I18n and L10n.
+
+
+The normal workflow when making an application available in multiple languages 
+is to mark all the texts that need translations in the source code. After the 
+texts are marked, Flask-Babel will scan all the files and extract those texts 
+into a separate translation file using the gettext tool. Unfortunately this is 
+a tedious task that needs to be done to enable translations.
+
+I'm going to show you a few examples of this marking here, but you can get 
+the complete set of changes from the download package for this chapter or
+the GitHub repository.
+https://github.com/miguelgrinberg/microblog/tree/v0.13
+
+
 
