@@ -713,3 +713,21 @@ The Flask Mega-Tutorial Part X: Email Support
 ## Continue with
 The Flask Mega-Tutorial Part XI: Facelift
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xi-facelift
+
+Note that the listing in this chapter does not include the entire HTML for the
+navigation bar, but you can see the full implementation on GitHub or by 
+downloading the code for this chapter.
+```
+https://github.com/miguelgrinberg/microblog/tree/v0.11
+```
+To update your application with these changes, please download the zip file for
+this chapter and update your templates accordingly.
+
+## Finished
+The Flask Mega-Tutorial Part XI: Facelift
+
+## Continue with
+The Flask Mega-Tutorial Part XII: Dates and Times
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xii-dates-and-times
+
+
