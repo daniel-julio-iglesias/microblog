@@ -759,5 +759,8 @@ the complete set of changes from the download package for this chapter or
 the GitHub repository.
 https://github.com/miguelgrinberg/microblog/tree/v0.13
 
-
+To extract all the texts to the .pot file, you can use the following command:
+```
+(venv) $ pybabel extract -F babel.cfg -k _l -o messages.pot .
+```
 
