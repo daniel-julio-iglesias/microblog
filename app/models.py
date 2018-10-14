@@ -1,17 +1,14 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 from datetime import datetime
-from app import db
-from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import UserMixin
-from app import login
 from hashlib import md5
 from time import time
+from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
-from app import app
+from app import app, db, login
 
 
-followers = db.Table('followers',
+followers = db.Table(
+    'followers',
     db.Column('follower_id', db.Integer, db.ForeignKey('user.id')),
     db.Column('followed_id', db.Integer, db.ForeignKey('user.id'))
 )

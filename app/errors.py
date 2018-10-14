@@ -1,7 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-# Custom error handlers
-
 from flask import render_template
 from app import app, db
 
