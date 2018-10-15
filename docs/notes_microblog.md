@@ -763,4 +763,17 @@ To extract all the texts to the .pot file, you can use the following command:
 ```
 (venv) $ pybabel extract -F babel.cfg -k _l -o messages.pot .
 ```
+The messages.pot file is not a file that needs to be incorporated into the 
+project. This is a file that can be easily regenerated any time it is needed, 
+simply by running the command above again. So there is no need to commit this 
+file to source control.
+
+The next step in the process is to create a translation for each language that 
+will be supported in addition to the base one, which in this case is English. 
+I said I was going to start by adding Spanish (language code es), so this is 
+the command that does that:
+```
+(venv) $ pybabel init -i messages.pot -d app/translations -l es
+creating catalog app/translations/es/LC_MESSAGES/messages.po based on messages.pot
+```
 
