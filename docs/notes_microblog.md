@@ -799,4 +799,6 @@ two steps:
 After the messages.po are updated, you can go ahead and translate any new tests, 
 then compile the messages one more time to make them available to the application.
 
+## Command-Line Enhancements
+
 
