@@ -776,4 +776,16 @@ the command that does that:
 (venv) $ pybabel init -i messages.pot -d app/translations -l es
 creating catalog app/translations/es/LC_MESSAGES/messages.po based on messages.pot
 ```
+Another common scenario occurs if you missed some texts when you added the _() 
+wrappers. In this case you are going to see that those texts that you missed 
+are going to remain in English, because Flask-Babel knows nothing about them. 
+In this situation you'll want to add the _() or _l() wrappers when you detect 
+texts that don't have them, and then do an update procedure, which involves 
+two steps:
+```
+(venv) $ pybabel extract -F babel.cfg -k _l -o messages.pot .
+(venv) $ pybabel update -i messages.pot -d app/translations
+```
+
+
 

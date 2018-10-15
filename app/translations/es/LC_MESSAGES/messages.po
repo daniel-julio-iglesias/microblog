@@ -1,14 +1,14 @@
 # Spanish translations for PROJECT.
-# Copyright (C) 2018 ORGANIZATION
+# Copyright (C) 2017 ORGANIZATION
 # This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2017.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2018-10-15 20:38+0300\n"
-"PO-Revision-Date: 2018-10-15 21:39+0300\n"
+"POT-Creation-Date: 2018-10-15 21:53+0300\n"
+"PO-Revision-Date: 2018-10-15 21:55+0300\n"
 "Language: es\n"
 "Language-Team: es <LL@li.org>\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -21,11 +21,11 @@ msgstr ""
 
 #: app/__init__.py:22
 msgid "Please log in to access this page."
-msgstr "Por favor, identifícate para acceder a la página."
+msgstr "Por favor ingrese para acceder a esta página."
 
 #: app/email.py:24
 msgid "[Microblog] Reset Your Password"
-msgstr "[Microblog] Restablecer la contraseña"
+msgstr "[Microblog] Nueva Contraseña"
 
 #: app/forms.py:13 app/forms.py:20 app/forms.py:53
 msgid "Username"
@@ -37,11 +37,11 @@ msgstr "Contraseña"
 
 #: app/forms.py:15
 msgid "Remember Me"
-msgstr "Recuérdame"
+msgstr "Recordarme"
 
 #: app/forms.py:16 app/routes.py:76 app/templates/login.html:5
 msgid "Sign In"
-msgstr "Iniciar sesión"
+msgstr "Ingresar"
 
 #: app/forms.py:21 app/forms.py:40
 msgid "Email"
@@ -49,7 +49,7 @@ msgstr "Email"
 
 #: app/forms.py:24 app/forms.py:47
 msgid "Repeat Password"
-msgstr "Repite la contraseña"
+msgstr "Repetir Contraseña"
 
 #: app/forms.py:26 app/routes.py:97 app/templates/register.html:5
 msgid "Register"
@@ -61,15 +61,15 @@ msgstr "Por favor use un nombre de usuario diferente."
 
 #: app/forms.py:36
 msgid "Please use a different email address."
-msgstr "Por favor use una direccion de Email diferente."
+msgstr "Por favor use una dirección de email diferente."
 
 #: app/forms.py:41 app/forms.py:49
 msgid "Request Password Reset"
-msgstr "Restablecer la contraseña"
+msgstr "Pedir una nueva contraseña"
 
 #: app/forms.py:54
 msgid "About me"
-msgstr "Recuérdame"
+msgstr "Acerca de mí"
 
 #: app/forms.py:56 app/forms.py:71
 msgid "Submit"
@@ -77,88 +77,86 @@ msgstr "Enviar"
 
 #: app/forms.py:70
 msgid "Say something"
-msgstr "Di algo"
+msgstr "Dí algo"
 
 #: app/routes.py:32
 msgid "Your post is now live!"
-msgstr "¡ Tu puesto está ahora en vivo!"
+msgstr "¡Tu artículo ha sido publicado!"
 
 #: app/routes.py:41 app/templates/base.html:21
 msgid "Home"
-msgstr ""
+msgstr "Inicio"
 
 #: app/routes.py:56 app/templates/base.html:22
 msgid "Explore"
-msgstr ""
+msgstr "Explorar"
 
 #: app/routes.py:69
-#, fuzzy
 msgid "Invalid username or password"
-msgstr "Contraseña"
+msgstr "Nombre de usuario o contraseña inválidos"
 
 #: app/routes.py:95
 msgid "Congratulations, you are now a registered user!"
-msgstr ""
+msgstr "¡Felicitaciones, ya eres un usuario registrado!"
 
 #: app/routes.py:110
 msgid "Check your email for the instructions to reset your password"
-msgstr ""
+msgstr "Busca en tu email las instrucciones para crear una nueva contraseña"
 
 #: app/routes.py:113 app/templates/reset_password_request.html:5
-#, fuzzy
 msgid "Reset Password"
-msgstr "Microblog Restablecer la contraseña"
+msgstr "Nueva Contraseña"
 
 #: app/routes.py:127
 msgid "Your password has been reset."
-msgstr "Tu contraseña fue restablecida."
+msgstr "Tu contraseña ha sido cambiada."
 
 #: app/routes.py:155
 msgid "Your changes have been saved."
-msgstr ""
+msgstr "Tus cambios han sido salvados."
 
 #: app/routes.py:160 app/templates/edit_profile.html:5
 msgid "Edit Profile"
-msgstr ""
+msgstr "Editar Perfil"
 
 #: app/routes.py:169 app/routes.py:185
-#, fuzzy, python-format
+#, python-format
 msgid "User %(username)s not found."
-msgstr "Hola, %(username)s!"
+msgstr "El usuario %(username)s no ha sido encontrado."
 
 #: app/routes.py:172
 msgid "You cannot follow yourself!"
-msgstr ""
+msgstr "¡No te puedes seguir a tí mismo!"
 
 #: app/routes.py:176
-#, fuzzy, python-format
+#, python-format
 msgid "You are following %(username)s!"
-msgstr "Hola, %(username)s!"
+msgstr "¡Ahora estás siguiendo a %(username)s!"
 
 #: app/routes.py:188
 msgid "You cannot unfollow yourself!"
-msgstr ""
+msgstr "¡No te puedes dejar de seguir a tí mismo!"
 
 #: app/routes.py:192
-#, fuzzy, python-format
+#, python-format
 msgid "You are not following %(username)s."
-msgstr "Hola, %(username)s!"
+msgstr "No estás siguiendo a %(username)s."
 
 #: app/templates/404.html:4
 msgid "Not Found"
-msgstr ""
+msgstr "Página No Encontrada"
 
 #: app/templates/404.html:5 app/templates/500.html:6
 msgid "Back"
-msgstr ""
+msgstr "Atrás"
 
 #: app/templates/500.html:4
 msgid "An unexpected error has occurred"
-msgstr ""
+msgstr "Ha ocurrido un error inesperado"
 
 #: app/templates/500.html:5
 msgid "The administrator has been notified. Sorry for the inconvenience!"
-msgstr ""
+msgstr "El administrador ha sido notificado. ¡Lamentamos la inconveniencia!"
 
 #: app/templates/_post.html:14
 #, python-format
@@ -166,21 +164,20 @@ msgid "%(username)s said %(when)s"
 msgstr "%(username)s dijo %(when)s"
 
 #: app/templates/base.html:4
-#, fuzzy
 msgid "Welcome to Microblog"
-msgstr "Microblog Restablecer la contraseña"
+msgstr "Bienvenido a Microblog"
 
 #: app/templates/base.html:26
 msgid "Login"
-msgstr ""
+msgstr "Ingresar"
 
 #: app/templates/base.html:28
 msgid "Profile"
-msgstr ""
+msgstr "Perfil"
 
 #: app/templates/base.html:29
 msgid "Logout"
-msgstr ""
+msgstr "Salir"
 
 #: app/templates/index.html:5
 #, python-format
@@ -189,63 +186,70 @@ msgstr "¡Hola, %(username)s!"
 
 #: app/templates/index.html:17 app/templates/user.html:31
 msgid "Newer posts"
-msgstr ""
+msgstr "Artículos siguientes"
 
 #: app/templates/index.html:22 app/templates/user.html:36
 msgid "Older posts"
-msgstr ""
+msgstr "Artículos previos"
 
 #: app/templates/login.html:12
 msgid "New User?"
-msgstr ""
+msgstr "¿Usuario Nuevo?"
 
 #: app/templates/login.html:12
-#, fuzzy
 msgid "Click to Register!"
-msgstr "Registrarse"
+msgstr "¡Haz click aquí para registrarte!"
 
 #: app/templates/login.html:14
-#, fuzzy
 msgid "Forgot Your Password?"
-msgstr "Tu contraseña fue restablecida."
+msgstr "¿Te olvidaste tu contraseña?"
 
 #: app/templates/login.html:15
-#, fuzzy
 msgid "Click to Reset It"
-msgstr "Restablecer la contraseña"
+msgstr "Haz click aquí para pedir una nueva"
 
 #: app/templates/reset_password.html:5
-#, fuzzy
 msgid "Reset Your Password"
-msgstr "Microblog Restablecer la contraseña"
+msgstr "Nueva Contraseña"
 
 #: app/templates/user.html:8
 msgid "User"
-msgstr ""
+msgstr "Usuario"
 
 #: app/templates/user.html:11
 msgid "Last seen on"
-msgstr ""
+msgstr "Última visita"
 
 #: app/templates/user.html:13
 #, python-format
 msgid "%(count)d followers"
-msgstr ""
+msgstr "%(count)d seguidores"
 
 #: app/templates/user.html:13
 #, python-format
 msgid "%(count)d following"
-msgstr ""
+msgstr "siguiendo a %(count)d"
 
 #: app/templates/user.html:15
-#, fuzzy
 msgid "Edit your profile"
-msgstr "Tu contraseña fue restablecida."
+msgstr "Editar tu perfil"
 
 #: app/templates/user.html:17
 msgid "Follow"
-msgstr ""
+msgstr "Seguir"
 
 #: app/templates/user.html:19
 msgid "Unfollow"
-msgstr ""
+msgstr "Dejar de seguir"
+
+#~ msgid "Search"
+#~ msgstr "Buscar"
+
+#~ msgid "Search Results"
+#~ msgstr "Resultados de Búsqueda"
+
+#~ msgid "Previous results"
+#~ msgstr "Resultados previos"
+
+#~ msgid "Next results"
+#~ msgstr "Resultados próximos"
