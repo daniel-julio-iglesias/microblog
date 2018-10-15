@@ -776,6 +776,16 @@ the command that does that:
 (venv) $ pybabel init -i messages.pot -d app/translations -l es
 creating catalog app/translations/es/LC_MESSAGES/messages.po based on messages.pot
 ```
+
+There are many translation applications that work with .po files. 
+If you feel comfortable editing the text file, then that's sufficient, but if 
+you are working with a large project it may be recommended to work with a 
+specialized editor. The most popular translation application is the 
+open-source poedit, which is available for all major operating systems. 
+If you are familiar with vim, then the po.vim plugin gives some key mappings 
+that make working with these files easier.
+
+
 Another common scenario occurs if you missed some texts when you added the _() 
 wrappers. In this case you are going to see that those texts that you missed 
 are going to remain in English, because Flask-Babel knows nothing about them. 
@@ -786,6 +796,7 @@ two steps:
 (venv) $ pybabel extract -F babel.cfg -k _l -o messages.pot .
 (venv) $ pybabel update -i messages.pot -d app/translations
 ```
-
+After the messages.po are updated, you can go ahead and translate any new tests, 
+then compile the messages one more time to make them available to the application.
 
 
