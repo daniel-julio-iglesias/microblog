@@ -833,3 +833,10 @@ And to compile all languages after updating the translation files:
 ```
 
 
+## Finished
+The Flask Mega-Tutorial Part XIII: I18n and L10n
+
+## Continue with
+The Flask Mega-Tutorial Part XIV: Ajax
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiv-ajax
+
