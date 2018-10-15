@@ -11,7 +11,7 @@
 # because the 0xc4 and 0xe8 in myStr1 are not valid in either.
 
 
-from app import app, db
+from app import app, db, cli
 from app.models import User, Post
 
 

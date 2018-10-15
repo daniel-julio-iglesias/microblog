@@ -801,4 +801,35 @@ then compile the messages one more time to make them available to the applicatio
 
 ## Command-Line Enhancements
 
+At this point, running flask --help will list the translate command as an 
+option. And flask translate --help will show the three sub-commands that 
+I defined:
+```
+(venv) $ flask translate --help
+Usage: flask translate [OPTIONS] COMMAND [ARGS]...
+
+  Translation and localization commands.
+
+Options:
+  --help  Show this message and exit.
+
+Commands:
+  compile  Compile all languages.
+  init     Initialize a new language.
+  update   Update all languages.
+```
+
+To add a new language, you use:
+```
+(venv) $ flask translate init <language-code>
+```
+To update all the languages after making changes to the _() and _l() language markers:
+```
+(venv) $ flask translate update
+```
+And to compile all languages after updating the translation files:
+```
+(venv) $ flask translate compile 
+```
+
 
