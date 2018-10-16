@@ -840,3 +840,18 @@ The Flask Mega-Tutorial Part XIII: I18n and L10n
 The Flask Mega-Tutorial Part XIV: Ajax
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xiv-ajax
 
+Each time there is a change made to the database models, a database migration 
+needs to be issued:
+```
+(venv) $ flask db migrate -m "add language to posts"
+```
+And then the migration needs to be applied to the database:
+```
+(venv) $ flask db upgrade
+```
+
+
+
+
+
+
