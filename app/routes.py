@@ -11,6 +11,8 @@ from app.forms import LoginForm, RegistrationForm, EditProfileForm, PostForm, \
 from app.models import User, Post
 from app.email import send_password_reset_email
 from guess_language import guess_language
+from flask import jsonify
+from app.translate import translate
 
 
 @app.before_request
@@ -196,3 +198,12 @@ def unfollow(username):
     db.session.commit()
     flash(_('You are not following %(username)s.', username=username))
     return redirect(url_for('user', username=username))
+
+
+@app.route('/translate', methods=['POST'])
+@login_required
+def translate_text():
+    return jsonify({'text': translate(request.form['text'],
+                                      request.form['source_language'],
+                                      request.form['dest_language'])})
+

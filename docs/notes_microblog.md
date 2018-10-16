@@ -850,8 +850,50 @@ And then the migration needs to be applied to the database:
 (venv) $ flask db upgrade
 ```
 
+Using a Third-Party Translation Service
 
+The two major translation services are Google Cloud Translation API and Microsoft 
+Translator Text API (https://www.microsoft.com/en-us/translator/business/). Both 
+are paid services, but the Microsoft offering has an entry level option for low 
+volume of translations that is free. Google offered a free translation service in 
+the past but today, even the lowest service tier is paid. Because I want to be 
+able to experiment with translations without incurring in expenses, I'm going to 
+implement the Microsoft solution.
 
+Before you can use the Microsoft Translator API, you will need to get an account 
+with Azure (https://azure.com/), Microsoft's cloud service. You can select the 
+free tier, while you will be asked to provide a credit card number during the 
+signup process, your card is not going to be charged while you stay on that 
+level of service.
 
+Once you have the Azure account, go to the Azure Portal and click on the "New" 
+button on the top left, and then type or select the "Translator Text API". When 
+you click the "Create" button, you will be presented with a form in which you 
+define a new translator resource that will be added to your account. You can see 
+below how I completed the form:
 
+Azure Translator
+
+When you click the "Create" button once again, the translator API resource will be 
+added to your account. If you want a few seconds, you will receive a notification 
+in the top bar that the translator resource was deployed. Click the 
+"Go to resource" button in the notification and then on the "Keys" option on the 
+left sidebar. You will now see two keys, labeled "Key 1" and "Key 2". Copy either 
+one of the keys to the clipboard and then enter it into an environment variable 
+in your terminal (if you are using Microsoft Windows, replace export with set):
+```
+https://azure.com/
+(venv) $ export MS_TRANSLATOR_KEY=<paste-your-key-here>
+(venv) $ set MS_TRANSLATOR_KEY=<paste-your-key-here>
+```
+```
+key1=0726899a2f64181942651cce208067
+key2=9ec90f097f04f1f8371c98e3b1d118
+5bb8
+```
+```
+>>> from app.translate import translate
+>>> translate('Hi, how are you today?', 'en', 'es')  # English to Spanish
+'Hola, ¿cómo estás hoy?'
+```
 
