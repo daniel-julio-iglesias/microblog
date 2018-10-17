@@ -897,3 +897,40 @@ key2=9ec90f097f04f1f8371c98e3b1d118
 'Hola, ¿cómo estás hoy?'
 ```
 
+For example, if I wanted to get the text for a post with ID 123 this is what I 
+would do:
+```
+$('#post123').text()
+```
+Here the $ sign is the name of a function provided by the jQuery library. This 
+library is used by Bootstrap, so it was already included by Flask-Bootstrap. The # 
+is part of the "selector" syntax used by jQuery, which means that what follows is 
+the ID of an element.
+
+In this chapter I introduced a few new texts that need to be translated into all 
+the languages supported by the application, so it is necessary to update the 
+translation catalogs:
+```
+(venv) $ flask translate update
+```
+For your own projects you will then need to edit the messages.po files in each 
+language repository to include the translations for these new tests, but I have 
+already created the Spanish translations in the download package for this chapter 
+or the GitHub repository.
+
+To publish the new translations, they need to be compiled:
+```
+(venv) $ flask translate compile
+```
+
+## Finished
+The Flask Mega-Tutorial Part XIV: Ajax
+
+## Continue with
+The Flask Mega-Tutorial Part XV: A Better Application Structure
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure
+
+
+
+
+
