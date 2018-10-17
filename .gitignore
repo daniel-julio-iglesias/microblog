@@ -1,5 +1,4 @@
 *.py[cod]
-*.profile
 
 # C extensions
 *.so
@@ -30,9 +29,6 @@ nosetests.xml
 
 # Translations
 *.mo
-
-# Pycharm CE
-.idea
 
 # Mr Developer
 .mr.developer.cfg

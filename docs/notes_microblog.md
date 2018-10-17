@@ -930,6 +930,21 @@ The Flask Mega-Tutorial Part XIV: Ajax
 The Flask Mega-Tutorial Part XV: A Better Application Structure
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure
 
+Wouldn't it be better if this project had all the authentication related files 
+separated from the rest of the application? The blueprints feature of Flask helps 
+achieve a more practical organization that makes it easier to reuse code.
+
+Having the application as a global variable can complicate certain scenarios, in 
+particular those related to testing.
+
+In this chapter I'm going to refactor the application to introduce blueprints for 
+the three subsystems I have identified above, and an application factory function. 
+Showing you the detailed list of changes is going to be impractical, because there 
+are little changes in pretty much every file that is part of the application, so 
+I'm going to discuss the steps that I took to do the refactoring, and you can then 
+download the application with these changes made.
+
+
 
 
 
