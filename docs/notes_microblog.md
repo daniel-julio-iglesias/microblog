@@ -970,6 +970,12 @@ RuntimeError: Working outside of application context.
 'sqlite:////home/miguel/microblog/app.db'
 'sqlite:///C:\\Users\\daiglesi\\PycharmProjects\\microblog\\app.db'
 ```
+Requirements File
+```
+(venv) $ pip freeze > requirements.txt
+(venv) $ pip install -r requirements.txt
+```
+
 
 ## Finished
 The Flask Mega-Tutorial Part XV: A Better Application Structure
