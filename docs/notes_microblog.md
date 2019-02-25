@@ -927,8 +927,7 @@ To publish the new translations, they need to be compiled:
 The Flask Mega-Tutorial Part XIV: Ajax
 
 ## Continue with
-The Flask Mega-Tutorial Part XV: A Better Application Structure
-https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure
+[The Flask Mega-Tutorial Part XV: A Better Application Structure](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure)
 
 Wouldn't it be better if this project had all the authentication related files 
 separated from the rest of the application? The blueprints feature of Flask helps 
@@ -942,7 +941,7 @@ the three subsystems I have identified above, and an application factory functio
 Showing you the detailed list of changes is going to be impractical, because there 
 are little changes in pretty much every file that is part of the application, so 
 I'm going to discuss the steps that I took to do the refactoring, and you can then 
-download [https://github.com/miguelgrinberg/microblog/archive/v0.15.zip] the application
+[download](https://github.com/miguelgrinberg/microblog/archive/v0.15.zip) the application
 with these changes made.
 
 In Flask, a blueprint is a logical structure that represents a subset of the application.
@@ -956,7 +955,42 @@ elements, the blueprint needs to be registered with the application. During the
 registration, all the elements that were added to the blueprint are passed on to
 the application. So you can think of a blueprint as a temporary storage for application
 functionality that helps in organizing your code.
+```
+>>> from flask import current_app
+>>> current_app.config['SQLALCHEMY_DATABASE_URI']
+...
+RuntimeError: Working outside of application context.
+
+>>> from app import create_app
+>>> app = create_app()
+[2019-02-25 15:58:19,231] INFO in __init__: Microblog startup
+
+>>> app.app_context().push()
+>>> current_app.config['SQLALCHEMY_DATABASE_URI']
+'sqlite:////home/miguel/microblog/app.db'
+'sqlite:///C:\\Users\\daiglesi\\PycharmProjects\\microblog\\app.db'
+```
 
 
+## Finished
+The Flask Mega-Tutorial Part XV: A Better Application Structure
+
+## Continue with
+[The Flask Mega-Tutorial Part XVI: Full-Text Search](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvi-full-text-search)
+
+This is the sixteenth installment of the Flask Mega-Tutorial series, in which I'm going
+to add a full-text search capability to Microblog.
+
+The goal of this chapter is to implement a search feature for Microblog, so that users
+can find interesting posts using natural language. For many types of web sites, it is
+possible to just let Google, Bing, etc. index all the content and provide search results
+through their search APIs. This works well for sites that have mostly static pages, like
+a forum. But in my application the basic unit of content is a user post, which is a small
+portion of the entire web page. The type of search results that I want are for these
+individual blog posts and not entire pages. For example, if I search for the word "dog"
+I want to see blog posts from any users that include that word. Obviously a page that
+shows all blog posts that have the word "dog" (or any other possible search term) does
+not really exist as a page that the big search engines can find and index, so clearly I
+have no choice other than to roll my own search feature.
 
 
