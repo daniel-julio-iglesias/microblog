@@ -942,9 +942,20 @@ the three subsystems I have identified above, and an application factory functio
 Showing you the detailed list of changes is going to be impractical, because there 
 are little changes in pretty much every file that is part of the application, so 
 I'm going to discuss the steps that I took to do the refactoring, and you can then 
-download the application with these changes made.
+download [https://github.com/miguelgrinberg/microblog/archive/v0.15.zip] the application
+with these changes made.
 
+In Flask, a blueprint is a logical structure that represents a subset of the application.
+A blueprint can include elements such as routes, view functions, forms, templates and
+static files. If you write your blueprint in a separate Python package, then you
+have a component that encapsulates the elements related to specific feature of
+the application.
 
+The contents of a blueprint are initially in a dormant state. To associate these
+elements, the blueprint needs to be registered with the application. During the
+registration, all the elements that were added to the blueprint are passed on to
+the application. So you can think of a blueprint as a temporary storage for application
+functionality that helps in organizing your code.
 
 
 
