@@ -971,7 +971,6 @@ RuntimeError: Working outside of application context.
 'sqlite:///C:\\Users\\daiglesi\\PycharmProjects\\microblog\\app.db'
 ```
 
-
 ## Finished
 The Flask Mega-Tutorial Part XV: A Better Application Structure
 
@@ -992,5 +991,39 @@ I want to see blog posts from any users that include that word. Obviously a page
 shows all blog posts that have the word "dog" (or any other possible search term) does
 not really exist as a page that the big search engines can find and index, so clearly I
 have no choice other than to roll my own search feature.
+
+There are several ways to install Elasticsearch, including one-click installers,
+zip file with the binaries that you need to install yourself, and even a Docker image. 
+
+Running Elasticsearch from the command lineedit
+Once installed, Elasticsearch can be started from the command line, if not installed
+as a service and configured to start when installation completes, as follows:
+```
+(Windows)
+cd C:\Program Files\Elastic\Elasticsearch\6.6.1
+.\bin\elasticsearch.exe
+```
+Once you install Elasticsearch on your computer, you can verify that it is running
+by typing http://localhost:9200 in your browser's address bar, which should return
+some basic information about the service in JSON format.
+```
+>>> from elasticsearch import Elasticsearch
+>>> es = Elasticsearch('http://localhost:9200')
+```
+Data in Elasticsearch is written to indexes. Unlike a relational database, the data
+is just a JSON object. The following example writes an object with a field called text
+to an index called my_index:
+```
+>>> es.index(index='my_index', doc_type='my_index', id=1, body={'text': 'this is a test'})
+>>> es.index(index='my_index', doc_type='my_index', id=2, body={'text': 'a second test'})
+```
+And now that there are two documents in this index, I can issue a free-form search.
+In this example, I'm going to search for this test:
+```
+>>> es.search(index='my_index', doc_type='my_index', body={'query': {'match': {'text': 'this test'}}})
+```
+
+
+
 
 
