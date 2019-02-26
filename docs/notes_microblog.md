@@ -972,7 +972,6 @@ Requirements File
 (venv) $ pip install -r requirements.txt
 ```
 
-
 ## Finished
 The Flask Mega-Tutorial Part XV: A Better Application Structure
 
@@ -1044,10 +1043,16 @@ In this example, I'm going to search for this test:
 >>> query_index('posts', 'one two three four five', 3, 3)
 ([], 5)
 ```
-
-
-
-
+## Search View Function
+This view function is going to be attached to the /search route,
+so that you can send a search request with a http://localhost:5000/search?q=search-words,
+just like Google.
+```
+http://localhost:5000/search?q=search-words
+```
+If the rendering logic for the previous and next links gets
+a bit confusing it might help to review the Bootstrap documentation
+for the [pagination component](https://getbootstrap.com/docs/3.3/components/#pagination).
 ## The next steps use just in case to recreate the already existing DB
 ```
 Backup and Delete the folder "migrations"
@@ -1103,3 +1108,10 @@ Backup and Delete the file "app.db"
 >>> db.drop_all()
 >>> app_context.pop()
 ```
+
+## Finished
+The Flask Mega-Tutorial Part XVI: Full-Text Search
+
+## Continue with
+[The Flask Mega-Tutorial Part XVII: Deployment on Linux](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux)
+
