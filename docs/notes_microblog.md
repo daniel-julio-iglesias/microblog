@@ -1120,6 +1120,7 @@ The Flask Mega-Tutorial Part XVI: Full-Text Search
 ## Continue with
 [The Flask Mega-Tutorial Part XVII: Deployment on Linux](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux)
 
+Deploy Microblog to a Linux server.
 ```
 
 ```
