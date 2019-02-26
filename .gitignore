@@ -42,3 +42,4 @@ microblog.log*
 
 migrations
 .vagrant
+*.log
