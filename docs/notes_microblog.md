@@ -1003,6 +1003,8 @@ as a service and configured to start when installation completes, as follows:
 (Windows)
 cd C:\Program Files\Elastic\Elasticsearch\6.6.1
 .\bin\elasticsearch.exe
+
+http://localhost:9200
 ```
 Once you install Elasticsearch on your computer, you can verify that it is running
 by typing http://localhost:9200 in your browser's address bar, which should return
@@ -1104,9 +1106,12 @@ Backup and Delete the file "app.db"
 ...     print(u.id, u.username)
 ...
 
+In case of removing data...
 >>> db.session.remove()
 >>> db.drop_all()
 >>> app_context.pop()
+
+(venv) $ flask run
 ```
 
 ## Finished
@@ -1114,4 +1119,9 @@ The Flask Mega-Tutorial Part XVI: Full-Text Search
 
 ## Continue with
 [The Flask Mega-Tutorial Part XVII: Deployment on Linux](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xvii-deployment-on-linux)
+
+```
+
+```
+
 
