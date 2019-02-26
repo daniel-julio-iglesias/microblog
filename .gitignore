@@ -39,5 +39,3 @@ nosetests.xml
 venv
 app.db
 microblog.log*
-
-versions
