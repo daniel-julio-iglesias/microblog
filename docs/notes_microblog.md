@@ -1,16 +1,12 @@
 # microblog
 
 ## microblog notes
-
 ```
-
 See the blog "The Flask Mega-Tutorial  [December 5 2017]" at
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 ```
-
 # A kind of README.first file
 ```
-
 TO DO: app sources download
 $ git config --global http.proxy http://proxy.mycompany:80
 $ git clone https://github.com/daniel-julio-iglesias/microblog
@@ -118,7 +114,7 @@ MS
 >>> db.session.add(u)
 >>> db.session.commit()
 
-db.session.rollback()
+>>> db.session.rollback()
 
 
 >>> users = User.query.all()
@@ -1029,7 +1025,81 @@ In this example, I'm going to search for this test:
 >>> es.search(index='my_index', doc_type='my_index', body={'query': {'match': {'text': 'this test'}}})
 ```
 
+``` 
+>>> from elasticsearch import Elasticsearch
+>>> es = Elasticsearch('http://localhost:9200')
+>>> es.index(index='my_index', doc_type='my_index', id=1, body={'text': 'this is a test'})
+>>> es.index(index='my_index', doc_type='my_index', id=2, body={'text': 'a second test'})
+>>> es.search(index='my_index', doc_type='my_index',
+...     body={'query': {'match': {'text': 'this test'}}})
+>>> for post in Post.query.all():
+...     add_to_index('posts', post)
+...
+>>> query_index('posts', 'one two three four five', 1, 100)
+([5, 8, 9, 6, 7], 5)
+>>> query_index('posts', 'one two three four five', 1, 3)
+([5, 8, 9], 5)
+>>> query_index('posts', 'one two three four five', 2, 3)
+([6, 7], 5)
+>>> query_index('posts', 'one two three four five', 3, 3)
+([], 5)
+```
 
 
 
 
+## The next steps use just in case to recreate the already existing DB
+```
+Backup and Delete the folder "migrations"
+Backup and Delete the file "app.db"
+
+(venv) $ set FLASK_APP=microblog.py
+(venv) $ flask db init
+(venv) $ flask db migrate -m "initialization"
+(venv) $ flask shell
+
+>>> from datetime import datetime, timedelta
+>>> from app import create_app, db
+>>> from app.models import User, Post
+>>> from config import Config
+
+>>> app = create_app(Config)
+>>> app_context = app.app_context()
+>>> app_context.push()
+>>> db.create_all()
+
+>>> u1 = User(username='john', email='john@example.com')
+>>> u2 = User(username='susan', email='susan@example.com')
+>>> u3 = User(username='mary', email='mary@example.com')
+>>> u4 = User(username='david', email='david@example.com')
+>>> db.session.add_all([u1, u2, u3, u4])
+
+>>> now = datetime.utcnow()
+>>> p1 = Post(body="post from john", author=u1,
+...                   timestamp=now + timedelta(seconds=1))
+>>> p2 = Post(body="post from susan", author=u2,
+...                   timestamp=now + timedelta(seconds=4))
+>>> p3 = Post(body="post from mary", author=u3,
+...                   timestamp=now + timedelta(seconds=3))
+>>> p4 = Post(body="post from david", author=u4,
+...                   timestamp=now + timedelta(seconds=2))
+>>> db.session.add_all([p1, p2, p3, p4])
+>>> db.session.commit()
+
+>>> u1.follow(u2)
+>>> u1.follow(u4)
+>>> u2.follow(u3)
+>>> u3.follow(u4)
+>>> db.session.commit()
+
+>>> users = User.query.all()
+>>> users
+[<User john>, <User susan>]
+>>> for u in users:
+...     print(u.id, u.username)
+...
+
+>>> db.session.remove()
+>>> db.drop_all()
+>>> app_context.pop()
+```
