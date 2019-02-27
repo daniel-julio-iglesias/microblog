@@ -1110,12 +1110,12 @@ In case of removing data...
 >>> db.session.remove()
 >>> db.drop_all()
 >>> app_context.pop()
-
-(venv) $ flask run
-
-You can use the python module
-initialize_app_db.py for 
+```
+You can use the python module initialize_app_db.py for 
 data initialization / recreation
+```
+(venv) $ python initialize_app_db.py
+(venv) $ flask run
 ```
 
 ## Finished
