@@ -1112,6 +1112,10 @@ In case of removing data...
 >>> app_context.pop()
 
 (venv) $ flask run
+
+You can use the python module
+initialize_app_db.py for 
+data initialization / recreation
 ```
 
 ## Finished
